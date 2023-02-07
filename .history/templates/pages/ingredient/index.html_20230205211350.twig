@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recettes ingredients
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Mes ingredients</h1>
+
+		{% for ingredient in ingredients %}
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">{{ ingredient.name }}</h5>
+					<p class="card-text">{{ ingredient.price }}</p>
+					<a href="{{ path('ingredient_show', {'id': ingredient.id}) }}" class="btn btn-primary">Voir</a>
+				</div>
+			</div>
+		{% endfor %}
+
+	</div>
+{% endblock %}
